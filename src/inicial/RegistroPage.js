@@ -7,6 +7,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 
 // Import the functions you need from the SDKs you need
@@ -15,13 +16,15 @@ import { initializeApp } from "@firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth, createUserWithEmailAndPassword } from "@firebase/auth";
+import { NavigationContainer } from "@react-navigation/native";
 // import { AsyncStorage } from "@react-native-async-storage/async-storage";
 
-const RegistroPage = () => {
+const RegistroPage = ({ navigation }) => {
 
   const [email, setEmail] = useState("");
   // const [emailLogado, setEmailLogado] = React.useState();
   const [password, setPassword] = useState("");
+  const [sucesso, setSucesso] = useState(false);
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -45,6 +48,7 @@ const RegistroPage = () => {
       const user = userCredential.user;
       // ...
       //setEmailLogado(user.email);
+      setSucesso(true);
       
     })
     .catch((error) => {
@@ -53,6 +57,7 @@ const RegistroPage = () => {
       // ..
       // alert(errorCode);
       // alert(errorMessage);
+      
     });
 
   
@@ -83,9 +88,12 @@ const RegistroPage = () => {
             borderRadius: 10,
           }}
           onPress={() => {
-            let response = createUserWithEmailAndPassword(auth, email, password);
-            if (response){
-              alert("Registrou " + email);
+            createUserWithEmailAndPassword(auth, email, password);
+            if (sucesso == true){
+              Alert.alert("Registrou " + email);
+              navigation.navigate("LoginPage");
+            } else {
+              Alert.alert("E-mail já registrado ou inválido!");
             }
           }}
         >

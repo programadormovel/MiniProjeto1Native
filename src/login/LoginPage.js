@@ -7,6 +7,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 
 // Import the functions you need from the SDKs you need
@@ -21,6 +22,8 @@ const LoginPage = ({ navigation }) => {
   const [email, setEmail] = useState("");
   // const [emailLogado, setEmailLogado] = React.useState();
   const [password, setPassword] = useState("");
+
+  const [sucesso, setSucesso] = useState(false);
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -44,6 +47,7 @@ const LoginPage = ({ navigation }) => {
       const user = userCredential.user;
       // ...
       //setEmailLogado(user.email);
+      setSucesso(true);
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -86,11 +90,12 @@ const LoginPage = ({ navigation }) => {
             borderRadius: 10,
           }}
           onPress={() => {
-            let response = signInWithEmailAndPassword(auth, email, password);
-            if (response != null) {
+            signInWithEmailAndPassword(auth, email, password);
+            if (sucesso == true) {
               alert("Logou " + email);
               navigation.navigate("InicialPage");
             } else {
+              Alert.alert('Login não realizado, verifique seu email ou senha ou realize seu cadastro!');
             }
           }}
         >

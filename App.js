@@ -8,33 +8,6 @@ import NotificacoesPage from './src/notificacoes/NotificacoesPage';
 import LoginPage from "./src/login/LoginPage";
 import RegistroPage from "./src/inicial/RegistroPage";
 
-// import { Rotas } from './rotas';
-// import { AppRegistry } from "react-native";
-// import { name as appName } from "./app.json";
-
-// import Rotas from ".";
-
-// AppRegistry.registerComponent(appName, () => Rotas);
-
-// const InicialPage = ({ navigation }) => {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Button
-//         onPress={() => navigation.navigate("Notificacoes")}
-//         title="Go to notifications"
-//       />
-//     </View>
-//   );
-// };
-
-// const NotificacoesPage = ({ navigation }) => {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Button onPress={() => navigation.goBack()} title="Go back home" />
-//     </View>
-//   );
-// };
-
 const Drawer = createDrawerNavigator();
 
 const Rotas = () => {
