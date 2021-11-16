@@ -14,7 +14,7 @@ const Rotas = () => {
   
   return (
     <NavigationContainer  independent={true}>
-      <Drawer.Navigator initialRouteName="LoginPage"> 
+      <Drawer.Navigator initialRouteName="InicialPage"> 
         <Drawer.Screen name="InicialPage" component={InicialPage} />
         <Drawer.Screen name="NotificacoesPage" component={NotificacoesPage} />
         <Drawer.Screen name="LoginPage" component={LoginPage} />

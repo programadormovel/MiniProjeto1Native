@@ -93,7 +93,7 @@ const LoginPage = ({ navigation }) => {
             signInWithEmailAndPassword(auth, email, password);
             if (sucesso == true) {
               alert("Logou " + email);
-              navigation.navigate("InicialPage");
+              navigation.navigate("Rotas");
             } else {
               Alert.alert('Login não realizado, verifique seu email ou senha ou realize seu cadastro!');
             }

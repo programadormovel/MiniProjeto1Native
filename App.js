@@ -6,6 +6,8 @@ import * as Font from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Rotas from "./Rotas";
+import LoginPage from "./src/login/LoginPage";
+import RegistroPage from "./src/inicial/RegistroPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,7 +30,7 @@ export default function App({ navigation }) {
         // Tell the application to render
         setAppIsReady(true);
         await SplashScreen.hideAsync();
-        navigation.navigate("Rotas");
+        navigation.navigate("LoginPage");
       }
     }
 
@@ -59,9 +61,15 @@ export default function App({ navigation }) {
     //   <Entypo name="rocket" size={30} />
 
     // </View>
-    <NavigationContainer independent={true}>
+    <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Rotas" component={Rotas} />
+        <Stack.Screen name="LoginPage" component={LoginPage} />
+        <Stack.Screen name="RegistroPage" component={RegistroPage} />
+        <Stack.Screen
+          name="Rotas"
+          component={Rotas}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
