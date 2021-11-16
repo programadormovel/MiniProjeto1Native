@@ -70,14 +70,14 @@ const RegistroPage = ({ navigation }) => {
           placeholder="Digite seu e-mail"
           style={styles.caixa}
           onChangeText={setEmail}
-          value={email}
+          // value={email}
         />
 
         <TextInput
           placeholder="Entre com sua senha"
           style={styles.caixa}
           onChangeText={setPassword}
-          value={password}
+          // value={password}
         />
 
         <TouchableOpacity
