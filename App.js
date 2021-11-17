@@ -30,7 +30,7 @@ export default function App({ navigation }) {
         // Tell the application to render
         setAppIsReady(true);
         await SplashScreen.hideAsync();
-        navigation.navigate("LoginPage");
+        navigation.navigate("Rotas");
       }
     }
 
@@ -61,8 +61,8 @@ export default function App({ navigation }) {
     //   <Entypo name="rocket" size={30} />
 
     // </View>
-    <NavigationContainer>
-      <Stack.Navigator>
+    <NavigationContainer independent={true}>
+      <Stack.Navigator initialRouteName="Rotas">
         <Stack.Screen name="LoginPage" component={LoginPage} />
         <Stack.Screen name="RegistroPage" component={RegistroPage} />
         <Stack.Screen
