@@ -4,12 +4,13 @@ import { Entypo } from "@expo/vector-icons";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import Rotas from "./Rotas";
 import LoginPage from "./src/login/LoginPage";
 import RegistroPage from "./src/inicial/RegistroPage";
+import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App({ navigation }) {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -70,6 +71,7 @@ export default function App({ navigation }) {
           component={Rotas}
           options={{ headerShown: false }}
         />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

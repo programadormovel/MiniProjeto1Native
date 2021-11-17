@@ -11,9 +11,6 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import pam1 from "../assets/pam1.png";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ConfirmaSQLite from "./ConfirmaSQLite";
 
 export default function CadastroSQLite({ navigation }) {
   const [nome, setNome] = useState("");
@@ -34,7 +31,7 @@ export default function CadastroSQLite({ navigation }) {
     },
   });
 
-  const Stack = createNativeStackNavigator();
+  
 
   const onSubmit = (data) => {
     console.log(data);
@@ -127,18 +124,7 @@ export default function CadastroSQLite({ navigation }) {
         <Image source={pam1} style={styles.botao} />
       </TouchableOpacity>
 
-      <NavigationContainer independent={true}>
-        <Stack.Navigator>
-          <Stack.Screen name="ConfirmaSQLite">
-            {(props) => 
-              <ConfirmaSQLite
-                {...props}
-                //extraData={data}
-              />
-            }
-          </Stack.Screen>
-        </Stack.Navigator>
-      </NavigationContainer>
+      
     </View>
   );
 }

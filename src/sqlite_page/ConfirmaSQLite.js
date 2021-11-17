@@ -24,12 +24,12 @@ export default function ConfirmaSQLite({ route, navigation }) {
 
   return (
     <View>
-      <Text value={JSON.stringify(nome)}></Text>
-      <Text value={JSON.stringify(sobrenome)}></Text>
-      <Text value={JSON.stringify(email)}></Text>
-      <Text value={JSON.stringify(telefone)}></Text>
+      <Text>{route.params.nome}</Text>
+      <Text>{route.params.sobrenome}</Text>
+      <Text>{route.params.email}</Text>
+      <Text>{route.params.telefone}</Text>
 
-      <View style={alinhamentoHorizontal}>
+      <View style={styles.alinhamentoHorizontal}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image source={pam1} style={styles.botao} />
         </TouchableOpacity>

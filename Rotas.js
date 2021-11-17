@@ -10,8 +10,10 @@ import LoginPage from "./src/login/LoginPage";
 import RegistroPage from "./src/inicial/RegistroPage";
 import HookForm from "./src/hook_form/HookForm";
 import CadastroSQLite from "./src/sqlite_page/CadastroSQLite";
+import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
 
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 const Rotas = () => {
   
@@ -24,6 +26,7 @@ const Rotas = () => {
         <Drawer.Screen name="RegistroPage" component={RegistroPage} />
         <Drawer.Screen name="HookForm" component={HookForm} />
         <Drawer.Screen name="CadastroSQLite" component={CadastroSQLite} />
+        <Stack.Screen name="ConfirmaSQLite" component={ConfirmaSQLite} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
