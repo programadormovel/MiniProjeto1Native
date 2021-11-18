@@ -9,6 +9,7 @@ import Rotas from "./Rotas";
 import LoginPage from "./src/login/LoginPage";
 import RegistroPage from "./src/inicial/RegistroPage";
 import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createStackNavigator();
 
@@ -21,17 +22,16 @@ export default function App({ navigation }) {
         // Keep the splash screen visible while we fetch resources
         await SplashScreen.preventAutoHideAsync();
         // Pre-load fonts, make any API calls you need to do here
-        await Font.loadAsync(Entypo.font);
+        // await Font.loadAsync(Entypo.font);
         // Artificially delay for two seconds to simulate a slow loading
         // experience. Please remove this if you copy and paste the code!
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        // await new Promise((resolve) => setTimeout(resolve, 200));
       } catch (e) {
         console.warn(e);
       } finally {
         // Tell the application to render
         setAppIsReady(true);
         await SplashScreen.hideAsync();
-        navigation.navigate("Rotas");
       }
     }
 
