@@ -7,7 +7,7 @@ import { Text, View, Button } from 'react-native';
 import InicialPage from './src/inicial/InicialPage';
 import NotificacoesPage from './src/notificacoes/NotificacoesPage';
 import LoginPage from "./src/login/LoginPage";
-import RegistroPage from "./src/inicial/RegistroPage";
+import RegistroPage from "./src/login/RegistroPage";
 import HookForm from "./src/hook_form/HookForm";
 import CadastroSQLite from "./src/sqlite_page/CadastroSQLite";
 import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";

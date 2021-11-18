@@ -7,7 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Rotas from "./Rotas";
 import LoginPage from "./src/login/LoginPage";
-import RegistroPage from "./src/inicial/RegistroPage";
+import RegistroPage from "./src/login/RegistroPage";
 import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
