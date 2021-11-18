@@ -64,7 +64,7 @@ const LoginPage = ({ navigation }) => {
         // ...
         //setEmailLogado(user.email);
         setSucesso(true);
-
+        // controlar troca de janela
         if (user.email === data.email) {
           navigation.navigate("Rotas");
         } else {
@@ -77,7 +77,7 @@ const LoginPage = ({ navigation }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         if (errorCode === "auth/wrong-password") {
-          alert("Wrong password.");
+          alert("Senha não confere.");
         } else if (errorCode === "auth/invalid-email") {
           alert("Email inválido!");
         } else {
