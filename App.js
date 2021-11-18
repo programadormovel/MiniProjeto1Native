@@ -63,7 +63,7 @@ export default function App({ navigation }) {
 
     // </View>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="Rotas">
+      <Stack.Navigator initialRouteName="LoginPage">
         <Stack.Screen name="LoginPage" component={LoginPage} />
         <Stack.Screen name="RegistroPage" component={RegistroPage} />
         <Stack.Screen
