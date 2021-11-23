@@ -6,7 +6,7 @@ import * as Font from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Rotas from "./Rotas";
-import LoginPage from "./src/login/LoginPage";
+import LoginPageYup from "./src/login/LoginPageYup";
 import RegistroPage from "./src/login/RegistroPage";
 import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
 import AsyncStorage from '@react-native-async-storage/async-storage';

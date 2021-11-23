@@ -6,8 +6,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Text, View, Button } from 'react-native';
 import InicialPage from './src/inicial/InicialPage';
 import NotificacoesPage from './src/notificacoes/NotificacoesPage';
-import LoginPage from "./src/login/LoginPage";
-import RegistroPage from "./src/login/RegistroPage";
+// import LoginPageYup from "./src/login/LoginPageYup";
+// import RegistroPage from "./src/login/RegistroPage";
 import HookForm from "./src/hook_form/HookForm";
 import CadastroSQLite from "./src/sqlite_page/CadastroSQLite";
 import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
@@ -22,8 +22,8 @@ const Rotas = () => {
       <Drawer.Navigator initialRouteName="InicialPage"> 
         <Drawer.Screen name="InicialPage" component={InicialPage} />
         <Drawer.Screen name="NotificacoesPage" component={NotificacoesPage} />
-        <Drawer.Screen name="LoginPage" component={LoginPage} />
-        <Drawer.Screen name="RegistroPage" component={RegistroPage} />
+        {/* <Drawer.Screen name="LoginPageYup" component={LoginPageYup} />
+        <Drawer.Screen name="RegistroPage" component={RegistroPage} /> */}
         <Drawer.Screen name="HookForm" component={HookForm} />
         <Drawer.Screen name="CadastroSQLite" component={CadastroSQLite} />
         <Stack.Screen name="ConfirmaSQLite" component={ConfirmaSQLite} />
