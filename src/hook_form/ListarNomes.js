@@ -63,7 +63,7 @@ const ListarNomes = () => {
         initialNumToRender={4}
         renderItem={({ item }) => <Item nome={item.nome} 
                             sobrenome={item.sobrenome} />}
-        keyExtractor={(item) => item.nome}
+        keyExtractor={(item) => item.id}
         getItemCount={getItemCount}
         getItem={getItem}
       />
