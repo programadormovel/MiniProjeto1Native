@@ -9,8 +9,6 @@ import {
 } from "react-native";
 import * as SQLite from "expo-sqlite";
 
-
-
 const ListarNomes = () => {
   // Abrir ou criar banco de dados SQLite
   const db = SQLite.openDatabase("dados.db");
@@ -26,26 +24,15 @@ const ListarNomes = () => {
       tx.executeSql("select * from nomes", [], (_, { rows }) => {
         console.log(JSON.stringify(rows));
         setDATA(rows);
-        console.log(JSON.stringify(DATA._array[0].nome));
+        // console.log(JSON.stringify(DATA._array[0].nome));
       });
     });
   }, []);
-
-  // const getItem = (data, index) => ({
-  //   id: Math.random().toString(12).substring(0),
-  //   title: `Item ${index + 1}`,
-  // });
-
-//   const getItem = (data, index) => ({
-//     id: DATA.id,
-//     nome: DATA.nome,
-//   });
 
   const getItem = (data, index) => ({
       id: JSON.stringify(DATA._array[index].id), 
         nome: JSON.stringify(DATA._array[index].nome),
         sobrenome: JSON.stringify(DATA._array[index].sobrenome)});
-
 
   const getItemCount = (data) => data.length;
 
@@ -55,6 +42,16 @@ const ListarNomes = () => {
       <Text style={styles.nome}>{sobrenome}</Text>
     </View>
   );
+
+  const atualizarDados = () => {
+    db.transaction((tx) => {
+      tx.executeSql("select * from nomes", [], (_, { rows }) => {
+        console.log(JSON.stringify(rows));
+        setDATA(rows);
+        // console.log(JSON.stringify(DATA._array[0].nome));
+      });
+    });
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -66,10 +63,15 @@ const ListarNomes = () => {
         keyExtractor={(item) => item.id}
         getItemCount={getItemCount}
         getItem={getItem}
+        refreshing={true}
+        scrollEnabled={true}
+        onScroll={atualizarDados}
       />
     </SafeAreaView>
   );
 };
+
+
 
 const styles = StyleSheet.create({
   container: {
