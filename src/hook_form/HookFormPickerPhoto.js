@@ -141,7 +141,8 @@ export default function HookFormPickerPhoto() {
             control={control}
             rules={{
               required: true,
-            }}
+            }}s
+            
             render={({ field: { onChange, onBlur, value } }) => (
               <TextInput
                 style={styles.input}
@@ -197,8 +198,8 @@ export default function HookFormPickerPhoto() {
                     setImage2(imagemRecuperada);
                     // const imagemRecuperada = JSON.parse(imagemJSONRecuperada);
                     Alert.alert(
-                        dados.nome + "\n" + dados.sobrenome + "\n" +
-                        <ImagemRecuperada />
+                      dados.nome + "\n" + dados.sobrenome + "\n" +
+                      <ImagemRecuperada />
                     );
                   }
                 } catch (e) {
@@ -208,7 +209,6 @@ export default function HookFormPickerPhoto() {
               }}
             />
           </View>
-
         </View>
         <ImagemRecuperada />
       </SafeAreaView>

@@ -10,6 +10,7 @@ import LoginPage from "./src/login/LoginPage";
 import RegistroPage from "./src/login/RegistroPage";
 import ConfirmaSQLite from "./src/sqlite_page/ConfirmaSQLite";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import CadastroFire from "./src/firebase/CadastroFire";
 
 const Stack = createStackNavigator();
 
@@ -63,7 +64,8 @@ export default function App({ navigation }) {
 
     // </View>
     <NavigationContainer independent={true}>
-      <Stack.Navigator initialRouteName="LoginPage">
+      <Stack.Navigator initialRouteName="CadastroFire">
+        <Stack.Screen name="CadastroFire" component={CadastroFire} />
         <Stack.Screen name="LoginPage" component={LoginPage} />
         <Stack.Screen name="RegistroPage" component={RegistroPage} />
         <Stack.Screen
